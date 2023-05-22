@@ -34,8 +34,8 @@ public class Positive_PetStoreTestAPI extends TestBase {
                 "}";
 
 
-        idFromPost = given().accept(ContentType.JSON).and() //what we are asking from api which is JSON response
-                .contentType(ContentType.JSON) //what we are sending to api, which is JSON also
+        idFromPost = given().accept(ContentType.JSON).and()
+                .contentType(ContentType.JSON)
                 .body(requestBody).log().all()
                 .when()
                 .post("/pet")
@@ -83,7 +83,6 @@ public class Positive_PetStoreTestAPI extends TestBase {
                 .log().all();
     }
     // Read Pet
-
     @Test(dependsOnMethods = "putRequest")
     public void getPetWithID() {
         given()
@@ -100,12 +99,11 @@ public class Positive_PetStoreTestAPI extends TestBase {
 
     }
 
-//Delete pet
+    //Delete pet
     @Test(dependsOnMethods = "getPetWithID")
     public void deletePet(){
 
         given().pathParam("id",idFromPost)
-//                .pathParam("api_key","special-key")
                 .when().delete("/pet/{id}")
                 .then().statusCode(200);
 

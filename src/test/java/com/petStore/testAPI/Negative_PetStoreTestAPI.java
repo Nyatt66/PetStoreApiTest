@@ -8,7 +8,7 @@ import static org.hamcrest.Matchers.*;
 
 public class Negative_PetStoreTestAPI extends TestBase {
 
-// InvalidID updated
+    // InvalidID updated
 
     @Test
     public void putRequest() {
@@ -62,8 +62,6 @@ public class Negative_PetStoreTestAPI extends TestBase {
     //Delete invalid ID pet
     @Test
     public void deletePet() {
-
-
         given().pathParam("id", 456543154612L)
                 .when().delete("/pet/{id}")
                 .then()

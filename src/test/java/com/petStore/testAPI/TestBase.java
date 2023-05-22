@@ -22,12 +22,12 @@ public class TestBase {
     public static void init() {
         //save baseurl inside this variable so that we dont need to type each http method.
         baseURI = "https://petstore.swagger.io/v2";
-//        basePath = "/pet";
+
     }
 
     @AfterClass
     public static void close(){
-        //reset the info we set above ,method comes from restassured
+        //reset the info we set above
         reset();
     }
 
